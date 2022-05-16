@@ -14,8 +14,15 @@ let requiredRange1 = [null, 200];
 let requiredRange2 = [100, 350];
 let requiredRange3 = [200, null];
 
+courses.sort((a, b) => a.prices[0] > b.prices[0] ? 1 : -1);
+console.log('По возрастанию цены курсы можно расположить следующим образом:' + '\n')
 
-console.log('Первому пользователю подходят такие курсы, как:');
+courses.forEach(course => {
+    console.log(course.name)
+});
+
+
+console.log('\n' + 'Первому пользователю подходят такие курсы, как:');
 
 courses.forEach(course => {
     if (course.prices[0] >= requiredRange1[0] && course.prices[1] <= requiredRange1[1]) {
